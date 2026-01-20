@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ACS VoIP Calling POC</title>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>ACS VoIP Calling POC</h1>
+        <p>Connect two ACS users with a direct VoIP call.</p>
+      </header>
+
+      <section class="card">
+        <h2>Credentials</h2>
+        <label class="field">
+          <span>ACS User Token</span>
+          <textarea id="token" placeholder="Paste your ACS user access token"></textarea>
+        </label>
+        <label class="field">
+          <span>Display Name</span>
+          <input id="displayName" type="text" placeholder="Optional display name" />
+        </label>
+        <button id="initAgent" class="primary">Initialize Call Agent</button>
+      </section>
+
+      <section class="card">
+        <h2>Place a VoIP Call</h2>
+        <label class="field">
+          <span>Callee ACS User ID</span>
+          <input id="calleeId" type="text" placeholder="8:acs:..." />
+        </label>
+        <div class="button-row">
+          <button id="startCall" class="primary" disabled>Start Call</button>
+          <button id="holdCall" disabled>Hold</button>
+          <button id="resumeCall" disabled>Resume</button>
+          <button id="endCall" class="danger" disabled>Hang Up</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Incoming Call</h2>
+        <p id="incomingText">No incoming call.</p>
+        <div class="button-row">
+          <button id="acceptCall" class="primary" disabled>Accept</button>
+          <button id="rejectCall" class="danger" disabled>Reject</button>
+        </div>
+      </section>
+
+      <section class="card status">
+        <h2>Status</h2>
+        <p id="statusText">Idle. Initialize the call agent to begin.</p>
+      </section>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
